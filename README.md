@@ -4,7 +4,7 @@
 
 ## 1. L'idée 
 - consiste à créer une composition graphique avec des formes
-- Un clic = couleur séléctionnée
+- Un clic = forme de base > carré
 - Un clic sur une case coloré = changement de forme 
 - Sélectionner une couleur de pixel et background
 - (+ Background image)
