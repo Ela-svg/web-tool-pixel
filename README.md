@@ -35,3 +35,15 @@ Découpage des bouts de code pour le projet :
 - Changer la forme lorsqu'on clic dessus
 - Changer la couleur de fond de la forme
 - Chosir une couleur de fond 
+
+**Quelques snippets à tester :**
+
+- Titre descriptif du snippet 
+
+```
+Coller le snippet
+```
+
+- Deuxième snippet
+  
+![alt text](image-2.png)
