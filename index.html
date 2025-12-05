@@ -1,27 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grille Configurable</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="libraries/p5.min.js"></script>
+  <script src="libraries/p5.sound.min.js"></script>
+</head>
+<body>
 
-    <title>Sketch</title>
+  <!-- BARRE DE PARAMÈTRES SUR LE CÔTÉ GAUCHE -->
+  <div id="sidebar">
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-    <script src="libraries/p5.min.js"></script>
-    <script src="libraries/p5.sound.min.js"></script>
-  </head>
-
-  <body>
-
-    <div id="controls">
-      <label>Colonnes : <input type="number" id="colsInput" value="20"></label>
-      <label>Lignes : <input type="number" id="rowsInput" value="20"></label>
+    <!-- --- Famille Grille : Dimensions --- -->
+    <div class="param-group">
+      <h3>Taille de la composition</h3>
+      <label>Colonnes : <input type="number" id="colsInput" value="20" min="1"></label>
+      <label>Lignes : <input type="number" id="rowsInput" value="20" min="1"></label>
       <button id="resizeGridBtn">Redimensionner la grille</button>
     </div>
-    
-    <div id="sketch-holder"></div>    
 
-    <script src="sketch.js"></script>
-  </body>
+     <!-- --- Famille Grille : Couleurs --- -->
+
+    <div class="param-group">
+      <h3>Grille</h3>
+      <label>Afficher la grille <input type="checkbox" id="gridToggle" checked></label>
+      <label>Couleur de la grille <input type="color" id="gridColor" value="#b4b4b4"></label>
+      <label>Background <input type="color" id="cellBgColor"></label>
+    </div>
+    
+
+    <!-- --- Famille Formes --- -->
+    <div class="param-group">
+      <h3>Formes</h3>
+      <label>Couleur des formes : <input type="color" id="shapeColor" value="#3C8CDE"></label>
+    </div>
+
+    <!-- --- Famille Contour --- -->
+    <div class="param-group">
+      <h3>Contour</h3>
+      <label><input type="checkbox" id="strokeToggle" checked> Activer le contour</label>
+      <div id="strokeOptions" style="margin-top:5px;">
+        <label>Couleur du contour : <input type="color" id="strokeColor" value="#000000"></label>
+        <label>Épaisseur : <input type="number" id="strokeWeight" value="2" min="0"></label>
+      </div>
+    </div>
+
+    <div class="param-group">
+      <h3>Export</h3>
+      <button id="downloadBtn">Télécharger PNG</button>
+    </div>
+  </div>
+
+ 
+  
+
+  <!-- CANVAS -->
+  <div id="sketch-holder"></div>
+
+  <!-- SCRIPT -->
+  <script src="sketch.js"></script>
+</body>
 </html>

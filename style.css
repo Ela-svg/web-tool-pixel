@@ -1,10 +1,137 @@
-html, body {
+/* style.css */
+
+/* --- RESET BASIQUE --- */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-canvas {
-  display: block;
+/* --- BODY --- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  height: 100vh; /* barre latérale pleine hauteur */
 }
 
+/* --- BARRE LATÉRALE GAUCHE --- */
+#sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  border-right: 2px solid #ccc;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto; /* permet de défiler si trop long */
+}
 
+/* Chaque groupe de paramètres */
+.param-group {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Sous-titres */
+.param-group h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 3px;
+}
+
+/* Labels */
+.param-group label {
+  font-size: 13px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* --- INPUTS & BOUTONS PAR BLOCS --- */
+
+/* Grille : Couleurs */
+#cellBgColor {
+  width: 50px;
+}
+#gridColor {
+  width: 50px;
+}
+
+/* Grille : Dimensions */
+#colsInput {
+  width: 60px;
+}
+#rowsInput {
+  width: 60px;
+}
+#resizeGridBtn {
+  width: 180px;
+  margin-top: 5px;
+}
+
+/* Formes */
+#shapeColor {
+  width: 50px;
+}
+
+/* Contour */
+#strokeToggle {
+  transform: scale(1); /* garde une taille normale pour checkbox */
+}
+#strokeColor {
+  width: 50px;
+}
+#strokeWeight {
+  width: 70px;
+}
+
+/* Boutons */
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3C8CDE;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+button:hover {
+  background-color: #3374c3;
+}
+
+/* --- CANVAS --- */
+#sketch-holder {
+  flex: 1; /* prend tout l’espace restant à droite */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Style responsive pour écrans plus petits */
+@media (max-width: 800px) {
+  body {
+    flex-direction: column;
+  }
+  #sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 2px solid #ccc;
+  }
+  #sketch-holder {
+    flex: unset;
+    height: 100%;
+  }
+}
